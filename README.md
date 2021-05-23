@@ -26,7 +26,7 @@ composer require archtechx/replace
 
 ## Development
 
-Running all checks locally:
+Run all checks locally:
 
 ```sh
 ./check
