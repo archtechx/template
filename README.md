@@ -2,7 +2,7 @@
 
 Simple and flexible package template. Supports Laravel 8 and 9.
 
-# Usage
+# Template usage
 
 - Replace all occurances of `REPLACE` (case sensitive) with the name of the package namespace. E.g. the `Foo` in `ArchTech\Foo`.
     - Also do this for file names, e.g. `REPLACEServiceProvider.php`.
