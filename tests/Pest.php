@@ -1,5 +1,7 @@
 <?php
 
+use ArchTech\REPLACE\Tests\TestCase;
+
 /*
 |--------------------------------------------------------------------------
 | Test Case
@@ -11,7 +13,7 @@
 |
 */
 
-uses(ArchTech\REPLACE\Tests\TestCase::class)->in('Pest');
+uses(TestCase::class)->in('Pest');
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +44,9 @@ expect()->extend('toBeOne', function () {
 function something()
 {
     // ..
+}
+
+function pest(): TestCase
+{
+    return Pest\TestSuite::getInstance()->test;
 }
