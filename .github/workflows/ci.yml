@@ -16,16 +16,22 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        laravel: [8, 9]
+        laravel: [11]
 
     steps:
     - uses: actions/checkout@v2
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.3
+        tools: composer:v2
+        coverage: none
     - name: Start docker containers
       run: docker-compose up -d
     - name: Install composer dependencies
       run: composer require "illuminate/support:^${{ matrix.laravel }}.0"
     - name: Run tests
-      run: vendor/bin/pest
+      run: vendor/bin/pest --colors=always
 
   phpstan:
     name: Static analysis (PHPStan)
@@ -33,6 +39,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: 8.3
+        tools: composer:v2
+        coverage: none
     - name: Install composer dependencies
       run: composer install
     - name: Run phpstan
@@ -43,6 +55,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          tools: composer:v2
+          coverage: none
       - name: Install php-cs-fixer
         run: composer global require friendsofphp/php-cs-fixer
       - name: Run php-cs-fixer
