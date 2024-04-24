@@ -1,6 +1,6 @@
 # REPLACE
 
-Simple and flexible package template. Supports Laravel 8 and 9.
+Simple and flexible package template. Supports Laravel 11.
 
 # Template usage
 

@@ -20,14 +20,14 @@
         }
     },
     "require": {
-        "php": "^8.0",
-        "illuminate/support": "^8.24|^9.0"
+        "php": "^8.3",
+        "illuminate/support": "^11.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.9|^7.0",
-        "nunomaduro/larastan": "^1.0|^2.0",
-        "pestphp/pest": "^1.2",
-        "pestphp/pest-plugin-laravel": "^1.0"
+        "orchestra/testbench": "^9.0",
+        "nunomaduro/larastan": "^2.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
     },
     "extra": {
         "laravel": {
@@ -37,5 +37,10 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
 }
